@@ -26,7 +26,7 @@ TEST(DynamicMeasurementVectorTest, Instantiation) {
     MyMeasurementVector test_measurement;
 
     EXPECT_EQ(11, MyMeasurementVector::MaxRowsAtCompileTime);
-    EXPECT_EQ(11, test_measurement.max_size());
+    EXPECT_EQ(11ul, test_measurement.max_size());
 }
 
 TEST(DynamicMeasurementVectorTest, Assignment) {

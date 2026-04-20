@@ -35,6 +35,14 @@ ADD_EXECUTABLE(unittest
     TestCore.cpp
     TestSquareRootCore.cpp)
 
+# To avoid [-Werror=maybe-uninitialized] in file
+# /usr/include/eigen3/Eigen/Core:341
+# [-Werror=unused-parameter] in test code
+target_compile_options(unittest PRIVATE
+    -Wno-unused-parameter
+    -Wno-maybe-uninitialized
+)
+
 # Create dependency of test on googletest
 ADD_DEPENDENCIES(unittest googletest eigen3)
 
